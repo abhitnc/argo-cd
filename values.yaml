@@ -1,0 +1,19 @@
+nginx:
+  replicaCount: 3
+  image:
+    repository: nginx
+    tag: 1.19.10
+    pullPolicy: IfNotPresent
+  service:
+    type: LoadBalancer
+    port: 80
+  ingress:
+    enabled: false
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+    paths:
+      - /
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
