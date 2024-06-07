@@ -22,7 +22,7 @@ nginx:
   securityContext: {}
   
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 80
   
   ingress:
